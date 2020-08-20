@@ -111,7 +111,10 @@ const businesses = [
     }
   ];
 
-  export const useBusinesses = () => {
-      return businesses.slice();
-  }
+  export const useBusinesses = businesses.filter(business => {
+      if(business.addressStateCode === "NY"){
+        return true;
+      }
+      return false;
+  });
 
